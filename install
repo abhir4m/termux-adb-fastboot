@@ -66,7 +66,9 @@ apt-get install -y brotli libc++ liblz4 termux-api zlib zstd >/dev/null 2>&1 \
 PKG_VERSION="0.2.3"
 DEB_NAME="termux-adb_${PKG_VERSION}_${arch}.deb"
 DEB_URL="https://raw.githubusercontent.com/abhir4m/termux-adb-fastboot/master/dists/termux/extras/binary-${arch}/${DEB_NAME}"
-DEB_PATH="/tmp/${DEB_NAME}"
+TMP_DIR="${TMPDIR:-$PREFIX/tmp}"
+mkdir -p "$TMP_DIR"
+DEB_PATH="$TMP_DIR/${DEB_NAME}"
 
 step "Downloading vendored termux-adb (${PKG_VERSION}) for ${arch}"
 if curl -fsSL -o "$DEB_PATH" "$DEB_URL"; then
