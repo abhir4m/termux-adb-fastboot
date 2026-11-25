@@ -4,7 +4,7 @@
 - Before proceed make sure you have installed latest [Termux](https://github.com/termux/termux-app/releases) and [Termux-api](https://github.com/termux/termux-api/releases)
 - Execute 
 ``` bash
-curl -s https://raw.githubusercontent.com/abhir4m/termux-adb-fastboot/main/install | bash
+curl -s https://raw.githubusercontent.com/abhir4m/termux-adb-fastboot/master/install | bash
 ```
 - That's it! ADB and Fastboot will be installed and ready to use.
 
