@@ -1,7 +1,7 @@
 # Termux adb-fastboot
 
 ### Installation
-- Before proceed make sure you have installed latest Termux and Termux-api
+- Before proceed make sure you have installed latest [Termux](https://github.com/termux/termux-app/releases) and [Termux-api](https://github.com/termux/termux-api/releases)
 - Execute 
 ``` bash
 curl -s https://raw.githubusercontent.com/abhir4m/termux-adb-fastboot/main/install | bash
