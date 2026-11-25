@@ -22,6 +22,7 @@ fail() { echo -e "${RED}[✘]${NC} $*"; }
 hr()   { echo -e "${DIM}------------------------------------------------------------${NC}"; }
 
 banner() {
+    clear
     echo -e "${CYAN}${BOLD}"
     echo "adb & fastboot for Termux"
     echo -e "${NC}"
@@ -64,7 +65,7 @@ apt-get install -y brotli libc++ liblz4 termux-api zlib zstd >/dev/null 2>&1 \
 # ---------- download vendored termux-adb ----------
 PKG_VERSION="0.2.3"
 DEB_NAME="termux-adb_${PKG_VERSION}_${arch}.deb"
-DEB_URL="https://raw.githubusercontent.com/abhir4m/termux-adb-fastboot/main/dists/termux/extras/binary-${arch}/${DEB_NAME}"
+DEB_URL="https://raw.githubusercontent.com/abhir4m/termux-adb-fastboot/master/dists/termux/extras/binary-${arch}/${DEB_NAME}"
 DEB_PATH="/tmp/${DEB_NAME}"
 
 step "Downloading vendored termux-adb (${PKG_VERSION}) for ${arch}"
@@ -98,7 +99,7 @@ helper="$PREFIX/bin/termux-adb-u"
 info "Installing self-update helper"
 cat > "$helper" <<'EOF'
 #!/bin/bash
-curl -s https://raw.githubusercontent.com/abhir4m/termux-adb-fastboot/main/utermuxadb | bash
+curl -s https://raw.githubusercontent.com/abhir4m/termux-adb-fastboot/master/utermuxadb | bash
 EOF
 chmod +x "$helper"
 ok "Self-update helper created at $helper"
