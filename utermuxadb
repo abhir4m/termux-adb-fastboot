@@ -64,7 +64,9 @@ apt-get update >/dev/null 2>&1 && ok "apt lists refreshed" || warn "apt update w
 PKG_VERSION="0.2.3"
 DEB_NAME="termux-adb_${PKG_VERSION}_${arch}.deb"
 DEB_URL="https://raw.githubusercontent.com/abhir4m/termux-adb-fastboot/main/dists/termux/extras/binary-${arch}/${DEB_NAME}"
-DEB_PATH="/tmp/${DEB_NAME}"
+TMP_DIR="${TMPDIR:-$PREFIX/tmp}"
+mkdir -p "$TMP_DIR"
+DEB_PATH="$TMP_DIR/${DEB_NAME}"
 
 installed_version=$(pkg show termux-adb 2>/dev/null | grep '^Version:' | awk '{print $2}')
 
